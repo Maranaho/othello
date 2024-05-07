@@ -1,0 +1,198 @@
+@import url("https://fonts.googleapis.com/css2?family=Gluten:slnt,wght@0,100..900&display=swap");
+body {
+  margin: 0;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  font-family: "Gluten", cursive;
+  box-sizing: border-box;
+  align-items: center;
+  height: 100vh;
+  font-size: 20px;
+}
+
+button {
+  cursor: pointer;
+  font-family: "Gluten", cursive;
+}
+button.btn {
+  color: #fff;
+  background: #000;
+  border-radius: 100px;
+  border: none;
+  padding: 20px 60px;
+  font-size: 1.1em;
+}
+button.btn:hover {
+  background: #2a2a2a;
+}
+
+.Game {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  width: 70vh;
+  height: 70vh;
+  gap: 10px;
+}
+
+.Piece {
+  border-radius: 50%;
+  border: 3px solid rgba(0, 0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.01);
+  outline: none;
+}
+.Piece.emptyBlue:hover, .Piece.emptyWhite:hover {
+  border: 3px solid rgb(0, 0, 0);
+}
+.Piece.emptyBlue:hover {
+  background: #59C3FF;
+  box-shadow: 0 6px 0 #ff8aff;
+  border: 3px solid #ff8aff;
+}
+.Piece.emptyWhite:hover {
+  box-shadow: 0 6px 0 #8af1c6;
+  border: 3px solid #8af1c6;
+}
+.Piece.white {
+  background: #fff;
+  border: 3px solid rgb(0, 0, 0);
+  box-shadow: 0 6px 0 rgb(0, 0, 0);
+}
+.Piece.white:hover {
+  border: 3px solid #8af1c6;
+  box-shadow: 0 6px 0 #8af1c6;
+}
+.Piece.blue {
+  background: #59C3FF;
+  border: 3px solid rgb(0, 0, 0);
+  box-shadow: 0 6px 0 rgb(0, 0, 0);
+}
+.Piece.blue:hover {
+  border: 3px solid #ff8aff;
+  box-shadow: 0 6px 0 #ff8aff;
+}
+
+.Turn {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.SwitchPlayer {
+  background: #fff;
+  border: 3px solid rgb(0, 0, 0);
+  box-shadow: 0 6px 0 rgb(0, 0, 0);
+  border-radius: 50px;
+  padding: 5px 70px;
+  font-size: 1.7em;
+  transition: padding 0.5s cubic-bezier(0.66, 0.01, 0.1, 1);
+}
+.SwitchPlayer > span {
+  transform: skewX(-15deg);
+  display: block;
+  font-weight: bold;
+}
+.SwitchPlayer.done {
+  padding: 5px 130px;
+}
+.SwitchPlayer.Blue {
+  background: #59C3FF;
+}
+.SwitchPlayer:disabled {
+  color: #000;
+  cursor: not-allowed;
+}
+
+.PiecesLeft {
+  font-size: 1.4em;
+  font-weight: bold;
+  transform: skewX(-15deg);
+  display: flex;
+  align-items: center;
+  min-width: 200px;
+  width: calc(50vw - 370px);
+}
+.PiecesLeft.white {
+  flex-direction: row-reverse;
+}
+.PiecesLeft.white span {
+  text-align: right;
+}
+.PiecesLeft.white > div:after {
+  right: inherit;
+  left: 0;
+}
+.PiecesLeft.blue > div:after {
+  background: #59C3FF;
+}
+.PiecesLeft > span {
+  width: 40px;
+}
+.PiecesLeft > div {
+  min-width: 20px;
+  transition: width 0.5s cubic-bezier(0.58, 0.02, 0, 1.01);
+  background: #000;
+  width: 20px;
+  height: 20px;
+  border: 6px solid rgb(0, 0, 0);
+  border-radius: 50px;
+  position: relative;
+}
+.PiecesLeft > div:after {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 50%;
+}
+
+.StartTheGame,
+.WhoWins {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.StartTheGame h1,
+.WhoWins h1 {
+  font-size: 3em;
+  margin: 0 0 50px;
+}
+
+.StartTheGame {
+  gap: 50px;
+  padding-top: 4vh;
+  box-sizing: border-box;
+}
+.StartTheGame h1 {
+  background: url("./assets/images/othello.png") no-repeat;
+  width: 645px;
+  height: 140px;
+  font-size: 7em;
+  text-align: center;
+  color: transparent;
+  background-size: 645px auto;
+}
+.StartTheGame .btn {
+  font-size: 2em;
+  margin-bottom: -70px;
+}
+
+.riveComponent {
+  width: 400px;
+  height: 400px;
+  cursor: pointer;
+}/*# sourceMappingURL=index.css.map */
